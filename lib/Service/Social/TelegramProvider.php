@@ -5,9 +5,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Service\Social;
+namespace OCA\Contacts_appleab\Service\Social;
 
-use OCA\Contacts\AppInfo\Application;
+use OCA\Contacts_appleab\AppInfo\Application;
 use OCP\Http\Client\IClient;
 use OCP\Http\Client\IClientService;
 use Psr\Log\LoggerInterface;

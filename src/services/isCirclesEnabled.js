@@ -5,5 +5,5 @@
 
 import { loadState } from '@nextcloud/initial-state'
 
-const isCirclesEnabled = loadState('contacts', 'isCirclesEnabled', false)
+const isCirclesEnabled = loadState('contacts_appleab', 'isCirclesEnabled', false)
 export default isCirclesEnabled

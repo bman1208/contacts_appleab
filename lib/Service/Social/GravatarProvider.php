@@ -5,7 +5,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Service\Social;
+namespace OCA\Contacts_appleab\Service\Social;
 
 class GravatarProvider implements ISocialProvider {
 	/** @var string */

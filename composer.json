@@ -12,7 +12,7 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"OCA\\Contacts\\": "lib/"
+			"OCA\\Contacts_appleab\\": "lib/"
 		}
 	},
 	"scripts": {

@@ -135,7 +135,7 @@ import logger from '../../services/logger.js'
 
 import 'cropperjs/dist/cropper.css'
 
-const supportedNetworks = loadState('contacts', 'supportedNetworks')
+const supportedNetworks = loadState('contacts_appleab', 'supportedNetworks')
 
 export default {
 	name: 'ContactDetailsAvatar',

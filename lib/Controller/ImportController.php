@@ -7,10 +7,10 @@ declare(strict_types=1);
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Controller;
+namespace OCA\Contacts_appleab\Controller;
 
-use OCA\Contacts\AppInfo\Application;
-use OCA\Contacts\Exception\InsufficientPermissionsException;
+use OCA\Contacts_appleab\AppInfo\Application;
+use OCA\Contacts_appleab\Exception\InsufficientPermissionsException;
 use OCA\DAV\CardDAV\CardDavBackend;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\Attribute\ApiRoute;

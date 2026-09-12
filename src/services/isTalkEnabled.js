@@ -5,5 +5,5 @@
 
 import { loadState } from '@nextcloud/initial-state'
 
-const isTalkEnabled = loadState('contacts', 'isTalkEnabled', false)
+const isTalkEnabled = loadState('contacts_appleab', 'isTalkEnabled', false)
 export default isTalkEnabled

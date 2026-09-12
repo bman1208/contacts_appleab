@@ -7,9 +7,9 @@ declare(strict_types=1);
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Listener;
+namespace OCA\Contacts_appleab\Listener;
 
-use OCA\Contacts\AppInfo\Application;
+use OCA\Contacts_appleab\AppInfo\Application;
 use OCA\Files\Event\LoadAdditionalScriptsEvent;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
@@ -25,7 +25,7 @@ class LoadContactsFilesActions implements IEventListener {
 			return;
 		}
 
-		Util::addStyle(Application::APP_ID, 'contacts-files-action');
-		Util::addInitScript(Application::APP_ID, 'contacts-files-action');
+		Util::addStyle(Application::APP_ID, 'contacts_appleab-files-action');
+		Util::addInitScript(Application::APP_ID, 'contacts_appleab-files-action');
 	}
 }

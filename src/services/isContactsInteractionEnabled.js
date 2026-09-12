@@ -5,5 +5,5 @@
 
 import { loadState } from '@nextcloud/initial-state'
 
-const isContactsInteractionEnabled = loadState('contacts', 'isContactsInteractionEnabled', false)
+const isContactsInteractionEnabled = loadState('contacts_appleab', 'isContactsInteractionEnabled', false)
 export default isContactsInteractionEnabled

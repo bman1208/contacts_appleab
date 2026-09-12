@@ -76,8 +76,8 @@ export default {
 
 	data() {
 		return {
-			allowSocialSync: loadState('contacts', 'allowSocialSync', true),
-			enableSocialSync: loadState('contacts', 'enableSocialSync', false),
+			allowSocialSync: loadState('contacts_appleab', 'allowSocialSync', true),
+			enableSocialSync: loadState('contacts_appleab', 'enableSocialSync', false),
 			enableSocialSyncLoading: false,
 			showSettings: false,
 		}

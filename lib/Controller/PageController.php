@@ -5,12 +5,12 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Controller;
+namespace OCA\Contacts_appleab\Controller;
 
 use OC\App\CompareVersion;
-use OCA\Contacts\AppInfo\Application;
-use OCA\Contacts\Service\GroupSharingService;
-use OCA\Contacts\Service\SocialApiService;
+use OCA\Contacts_appleab\AppInfo\Application;
+use OCA\Contacts_appleab\Service\GroupSharingService;
+use OCA\Contacts_appleab\Service\SocialApiService;
 use OCP\App\IAppManager;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\TemplateResponse;
@@ -76,8 +76,8 @@ class PageController extends Controller {
 		$this->initialState->provideInitialState('isCirclesEnabled', $isCirclesEnabled && $isCircleVersionCompatible);
 		$this->initialState->provideInitialState('isTalkEnabled', $isTalkEnabled && $isTalkVersionCompatible);
 
-		Util::addStyle(Application::APP_ID, 'contacts-main');
-		Util::addScript(Application::APP_ID, 'contacts-main');
+		Util::addStyle(Application::APP_ID, 'contacts_appleab-main');
+		Util::addScript(Application::APP_ID, 'contacts_appleab-main');
 
 		return new TemplateResponse(Application::APP_ID, 'main');
 	}

@@ -299,6 +299,26 @@
 					</div>
 				</section>
 
+				<!-- Apple X-AB* derived data (read-only) -->
+				<section
+					v-if="contact.appleRelated.length || contact.appleDates.length"
+					class="property property--apple-readonly">
+					<h5 class="property__apple-readonly-title">
+						{{ t('contacts', 'From Apple (view only)') }}
+					</h5>
+					<ul>
+						<li v-for="(item, index) in contact.appleRelated" :key="`apple-related-${index}`">
+							{{ item.type }}: {{ item.value }}
+						</li>
+						<li v-for="(item, index) in contact.appleDates" :key="`apple-date-${index}`">
+							{{ item.type }}: {{ item.value }}
+						</li>
+					</ul>
+					<p class="property__apple-readonly-hint">
+						{{ t('contacts', 'Edit this on an Apple device to keep it working correctly with iCloud.') }}
+					</p>
+				</section>
+
 				<!-- addressbook change select - no last property because class is not applied here,
 					empty property because this is a required prop on regular property-select. But since
 					we are hijacking this... (this is supposed to be used with a ICAL.property, but to avoid code
@@ -1273,6 +1293,25 @@ section.contact-details {
 :deep(.button-vue--vue-tertiary:hover),
 :deep(.button-vue--vue-tertiary:active) {
 	background-color: var(--color-primary-element-light-hover) !important;
+}
+
+.property--apple-readonly {
+	padding: 8px 16px;
+	margin: 4px 0;
+	background-color: var(--color-background-hover);
+	border-radius: var(--border-radius);
+	opacity: 0.85;
+}
+
+.property__apple-readonly-title {
+	font-weight: bold;
+	margin: 0 0 4px 0;
+}
+
+.property__apple-readonly-hint {
+	color: var(--color-text-maxcontrast);
+	font-size: 0.85em;
+	margin: 4px 0 0 0;
 }
 
 .related-resources {

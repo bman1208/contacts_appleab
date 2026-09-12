@@ -7,9 +7,9 @@ declare(strict_types=1);
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Cron;
+namespace OCA\Contacts_appleab\Cron;
 
-use OCA\Contacts\AppInfo\Application;
+use OCA\Contacts_appleab\AppInfo\Application;
 
 use OCP\AppFramework\Utility\ITimeFactory;
 use OCP\BackgroundJob\IJobList;

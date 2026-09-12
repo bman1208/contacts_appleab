@@ -10,6 +10,7 @@ import ICAL from 'ical.js'
 import { v4 as uuid } from 'uuid'
 import { shallowRef, unref } from 'vue'
 import updateDesignSet from '../services/updateDesignSet.js'
+import { getAppleRelatedNames, getAppleDates } from '../services/appleRelatedProperties.js'
 import store from '../store/index.js'
 
 /**
@@ -310,6 +311,31 @@ export default class Contact {
 				.filter((group) => group.trim() !== '')
 		}
 		return []
+	}
+
+	/**
+	 * Read-only relationship entries written by Apple's Contacts app as
+	 * X-ABRELATEDNAMES (not the RFC 6350 RELATED property Apple's apps
+	 * don't reliably read). Derived on every access; never mutates vCard
+	 * and is never included when the contact is saved.
+	 *
+	 * @readonly
+	 * @memberof Contact
+	 */
+	get appleRelated() {
+		return getAppleRelatedNames(this.vCard)
+	}
+
+	/**
+	 * Read-only custom dates written by Apple's Contacts app as X-ABDATE
+	 * (e.g. Anniversary). Derived on every access; never mutates vCard and
+	 * is never included when the contact is saved.
+	 *
+	 * @readonly
+	 * @memberof Contact
+	 */
+	get appleDates() {
+		return getAppleDates(this.vCard)
 	}
 
 	/**

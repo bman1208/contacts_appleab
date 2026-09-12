@@ -106,5 +106,11 @@
   "engines": {
     "node": "^24.0.0",
     "npm": "^11.3.0"
+  },
+  "allowScripts": {
+    "core-js@3.37.0": true,
+    "esbuild@0.25.3": true,
+    "esbuild@0.28.1": true,
+    "sharp@0.34.5": true
   }
 }

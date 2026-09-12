@@ -26,7 +26,7 @@ export default {
 	name: 'AdminSettings',
 	data() {
 		return {
-			allowSocialSync: loadState('contacts', 'allowSocialSync', true),
+			allowSocialSync: loadState('contacts_appleab', 'allowSocialSync', true),
 		}
 	},
 

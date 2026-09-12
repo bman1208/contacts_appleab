@@ -7,10 +7,10 @@ declare(strict_types=1);
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Service;
+namespace OCA\Contacts_appleab\Service;
 
-use OCA\Contacts\AppInfo\Application;
-use OCA\Contacts\Service\Social\CompositeSocialProvider;
+use OCA\Contacts_appleab\AppInfo\Application;
+use OCA\Contacts_appleab\Service\Social\CompositeSocialProvider;
 use OCA\DAV\CardDAV\ContactsManager;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\JSONResponse;

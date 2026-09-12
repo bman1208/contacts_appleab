@@ -5,9 +5,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts\Controller;
+namespace OCA\Contacts_appleab\Controller;
 
-use OCA\Contacts\AppInfo\Application;
+use OCA\Contacts_appleab\AppInfo\Application;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http\RedirectResponse;
 use OCP\IL10N;

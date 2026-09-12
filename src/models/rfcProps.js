@@ -10,8 +10,8 @@ import { otherContacts } from '../utils/chartUtils.js'
 import zones from './zones.js'
 
 // Load the default profile (for example, home or work) configured by the user
-const defaultProfileState = loadState('contacts', 'defaultProfile', 'HOME')
-const localesState = loadState('contacts', 'locales', false)
+const defaultProfileState = loadState('contacts_appleab', 'defaultProfile', 'HOME')
+const localesState = loadState('contacts_appleab', 'locales', false)
 const locales = localesState
 	? localesState.map(({ code, name }) => ({
 			id: code.toLowerCase().replace('_', '-'),

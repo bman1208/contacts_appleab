@@ -7,9 +7,9 @@ declare(strict_types=1);
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-namespace OCA\Contacts;
+namespace OCA\Contacts_appleab;
 
-use OCA\Contacts\AppInfo\Application;
+use OCA\Contacts_appleab\AppInfo\Application;
 use OCP\Capabilities\ICapability;
 use OCP\IL10N;
 use OCP\IURLGenerator;
@@ -34,7 +34,7 @@ class Capabilities implements ICapability {
 					'context-menu' => [
 						[
 							'name' => $this->l10n->t('Import contacts'),
-							'url' => $this->url->getWebroot() . '/ocs/v2.php/apps/contacts/api/v1/import/{fileId}',
+							'url' => $this->url->getWebroot() . '/ocs/v2.php/apps/contacts_appleab/api/v1/import/{fileId}',
 							'method' => 'POST',
 							'mimetype_filters' => 'text/vcard',
 						],

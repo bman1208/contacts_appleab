@@ -5,8 +5,8 @@
   - SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 <info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
-	<id>contacts</id>
-	<name>Contacts</name>
+	<id>contacts_appleab</id>
+	<name>Contacts (Apple Fields)</name>
 	<summary>A contacts app for Nextcloud</summary>
 	<description>The Nextcloud contacts app is a user interface for Nextcloud's CardDAV server. Easily sync contacts from various devices with your Nextcloud and edit them online.
 
@@ -57,14 +57,14 @@
 
 	<navigations>
 		<navigation>
-			<name>Contacts</name>
-			<route>contacts.page.index</route>
+			<name>Contacts (Apple Fields)</name>
+			<route>contacts_appleab.page.index</route>
 			<icon>app.svg</icon>
 			<order>4</order>
 		</navigation>
 	</navigations>
 
 	<contactsmenu>
-		<provider>OCA\Contacts\ContactsMenu\Providers\DetailsProvider</provider>
+		<provider>OCA\Contacts_appleab\ContactsMenu\Providers\DetailsProvider</provider>
 	</contactsmenu>
 </info>

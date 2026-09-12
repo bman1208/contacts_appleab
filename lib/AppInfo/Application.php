@@ -4,13 +4,13 @@
  * SPDX-FileCopyrightText: 2018 Nextcloud GmbH and Nextcloud contributors
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
-namespace OCA\Contacts\AppInfo;
+namespace OCA\Contacts_appleab\AppInfo;
 
-use OCA\Contacts\Capabilities;
-use OCA\Contacts\Dav\PatchPlugin;
-use OCA\Contacts\Event\LoadContactsOcaApiEvent;
-use OCA\Contacts\Listener\LoadContactsFilesActions;
-use OCA\Contacts\Listener\LoadContactsOcaApi;
+use OCA\Contacts_appleab\Capabilities;
+use OCA\Contacts_appleab\Dav\PatchPlugin;
+use OCA\Contacts_appleab\Event\LoadContactsOcaApiEvent;
+use OCA\Contacts_appleab\Listener\LoadContactsFilesActions;
+use OCA\Contacts_appleab\Listener\LoadContactsOcaApi;
 use OCA\DAV\Events\SabrePluginAddEvent;
 use OCA\Files\Event\LoadAdditionalScriptsEvent;
 use OCP\AppFramework\App;
@@ -20,7 +20,7 @@ use OCP\AppFramework\Bootstrap\IRegistrationContext;
 use OCP\EventDispatcher\IEventDispatcher;
 
 class Application extends App implements IBootstrap {
-	public const APP_ID = 'contacts';
+	public const APP_ID = 'contacts_appleab';
 
 	public function __construct() {
 		parent::__construct(self::APP_ID);

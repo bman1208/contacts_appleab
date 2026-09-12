@@ -5,5 +5,5 @@
 
 import { loadState } from '@nextcloud/initial-state'
 
-const isGroupSharingEnabled = loadState('contacts', 'isGroupSharingEnabled', false)
+const isGroupSharingEnabled = loadState('contacts_appleab', 'isGroupSharingEnabled', false)
 export default isGroupSharingEnabled
