@@ -348,7 +348,9 @@ export default {
 				// priority to the one above then the one after
 				const newContact = oldIndex === 0 ? this.list[oldIndex + 1] : this.list[oldIndex - 1]
 				if (newContact) {
-					this.$router.push({ name: 'contact', params: { selectedGroup: this.selectedGroup, selectedContact: newContact.key } })
+					this.$router.push(this.selectedAddressbook
+						? { name: 'addressbook-contact', params: { selectedAddressbook: this.selectedAddressbook, selectedContact: newContact.key } }
+						: { name: 'contact', params: { selectedGroup: this.selectedGroup, selectedContact: newContact.key } })
 				}
 			}
 		},

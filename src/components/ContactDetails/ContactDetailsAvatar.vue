@@ -524,7 +524,7 @@ export default {
 			if (!this.loading) {
 				this.loading = true
 				try {
-					const response = await axios.put(generateUrl('/apps/contacts/api/v1/social/avatar/{network}/{id}/{uid}', {
+					const response = await axios.put(generateUrl('/apps/contacts_appleab/api/v1/social/avatar/{network}/{id}/{uid}', {
 						network: network.toLowerCase(),
 						id: this.contact.addressbook.id,
 						uid: this.contact.uid,

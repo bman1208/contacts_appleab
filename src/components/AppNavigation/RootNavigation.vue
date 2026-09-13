@@ -127,6 +127,28 @@
 				:group="group"
 				@update-route-state="updateRouteState" />
 
+			<!-- Address books -->
+			<AppNavigationCaption :name="t('contacts', 'Address books')" />
+			<AppNavigationItem
+				v-for="addressbook in enabledAddressbooks"
+				:key="addressbook.id"
+				:name="addressbook.displayName"
+				:to="{
+					name: ROUTE_ADDRESSBOOK,
+					params: { selectedAddressbook: addressbook.id },
+				}"
+				:active="routeState === `${ROUTE_ADDRESSBOOK}:${addressbook.id}`"
+				@click="updateRouteState(`${ROUTE_ADDRESSBOOK}:${addressbook.id}`)">
+				<template #icon>
+					<IconAddressBook :size="20" />
+				</template>
+				<template #counter>
+					<NcCounterBubble
+						v-if="addressbookContactCount(addressbook)"
+						:count="addressbookContactCount(addressbook)" />
+				</template>
+			</AppNavigationItem>
+
 			<template v-if="isCirclesEnabled">
 				<!-- Toggle groups ellipsis -->
 				<AppNavigationItem
@@ -220,6 +242,7 @@ import IconContact from 'vue-material-design-icons/AccountMultipleOutline.vue'
 import IconUser from 'vue-material-design-icons/AccountOutline.vue'
 import IconError from 'vue-material-design-icons/AlertCircleOutline.vue'
 import Cog from 'vue-material-design-icons/CogOutline.vue'
+import IconAddressBook from 'vue-material-design-icons/BookAccountOutline.vue'
 import IconAdd from 'vue-material-design-icons/Plus.vue'
 import NewCircleIntro from '../EntityPicker/NewCircleIntro.vue'
 import IconRecentlyContacted from '../Icons/IconRecentlyContacted.vue'
@@ -227,7 +250,7 @@ import CircleNavigationItem from './CircleNavigationItem.vue'
 import ContactsSettings from './ContactsSettings.vue'
 import GroupNavigationItem from './GroupNavigationItem.vue'
 import RouterMixin from '../../mixins/RouterMixin.js'
-import { CHART_ALL_CONTACTS, CIRCLE_DESC, CONTACTS_SETTINGS, ELLIPSIS_COUNT, GROUP_ALL_CONTACTS, GROUP_NO_GROUP_CONTACTS, GROUP_RECENTLY_CONTACTED } from '../../models/constants.ts'
+import { CHART_ALL_CONTACTS, CIRCLE_DESC, CONTACTS_SETTINGS, ELLIPSIS_COUNT, GROUP_ALL_CONTACTS, GROUP_NO_GROUP_CONTACTS, GROUP_RECENTLY_CONTACTED, ROUTE_ADDRESSBOOK } from '../../models/constants.ts'
 import isCirclesEnabled from '../../services/isCirclesEnabled.js'
 import isContactsInteractionEnabled from '../../services/isContactsInteractionEnabled.js'
 import useUserGroupStore from '../../store/userGroup.ts'
@@ -252,6 +275,7 @@ export default {
 		IconUser,
 		IconUserFilled,
 		IconAdd,
+		IconAddressBook,
 		IconError,
 		IconLoading,
 		IconRecentlyContacted,
@@ -271,6 +295,7 @@ export default {
 	data() {
 		return {
 			CIRCLE_DESC,
+			ROUTE_ADDRESSBOOK,
 			CONTACTS_SETTINGS,
 			ELLIPSIS_COUNT,
 			GROUP_ALL_CONTACTS,
@@ -301,6 +326,14 @@ export default {
 
 	computed: {
 		// store variables
+		addressbooks() {
+			return this.$store.getters.getAddressbooks
+		},
+
+		enabledAddressbooks() {
+			return this.addressbooks.filter((addressbook) => addressbook.enabled)
+		},
+
 		circles() {
 			return this.$store.getters.getCircles
 		},
@@ -426,6 +459,11 @@ export default {
 	},
 
 	methods: {
+		addressbookContactCount(addressbook) {
+			// contact groups are stored as contacts too, but never listed as such
+			return Object.values(addressbook.contacts || {}).filter((contact) => contact.kind !== 'group').length
+		},
+
 		toggleNewGroupMenu() {
 			this.isNewGroupMenuOpen = !this.isNewGroupMenuOpen
 		},

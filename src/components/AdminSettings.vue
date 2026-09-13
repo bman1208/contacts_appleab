@@ -32,7 +32,7 @@ export default {
 
 	methods: {
 		updateSetting(setting) {
-			axios.put(generateUrl('apps/contacts/api/v1/social/config/global/' + setting), {
+			axios.put(generateUrl('apps/contacts_appleab/api/v1/social/config/global/' + setting), {
 				allow: this[setting] ? 'yes' : 'no',
 			})
 		},

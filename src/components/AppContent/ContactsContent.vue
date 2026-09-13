@@ -165,12 +165,19 @@ export default {
 		 */
 		hideDetails() {
 			// Reset the selected contact
-			this.$router.push({
-				name: 'group',
-				params: {
-					selectedGroup: this.selectedGroup,
-				},
-			})
+			this.$router.push(this.selectedAddressbook
+				? {
+						name: 'addressbook',
+						params: {
+							selectedAddressbook: this.selectedAddressbook,
+						},
+					}
+				: {
+						name: 'group',
+						params: {
+							selectedGroup: this.selectedGroup,
+						},
+					})
 		},
 	},
 }

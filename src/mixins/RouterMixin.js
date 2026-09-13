@@ -11,6 +11,9 @@ export default {
 		selectedGroup() {
 			return this.$route.params.selectedGroup
 		},
+		selectedAddressbook() {
+			return this.$route.params.selectedAddressbook
+		},
 		selectedCircle() {
 			return this.$route.params.selectedCircle
 		},

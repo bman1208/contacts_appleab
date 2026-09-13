@@ -26,7 +26,7 @@ export function transformNode(contact) {
 		org: contact.org,
 		photoUrl: `${contact.url}?photo`,
 		title: contact.title,
-		link: generateUrl(`apps/contacts/${GROUP_ALL_CONTACTS}/${contact.key}`),
+		link: generateUrl(`apps/contacts_appleab/${GROUP_ALL_CONTACTS}/${contact.key}`),
 		expanded: !contact.managersName,
 	}
 }

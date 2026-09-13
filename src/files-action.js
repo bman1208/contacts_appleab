@@ -47,7 +47,7 @@ registerFileAction(new FileAction({
 			})
 
 			// Redirect to the import page if the user confirmed
-			window.location = generateUrl(`/apps/contacts/import?file=${file.path}`)
+			window.location = generateUrl(`/apps/contacts_appleab/import?file=${file.path}`)
 		} catch (e) {
 			// Do nothing if the user cancels
 		} finally {

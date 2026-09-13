@@ -114,7 +114,7 @@ export default {
 
 			const setting = value ? 'yes' : 'no'
 			try {
-				await axios.put(generateUrl('apps/contacts/api/v1/social/config/user/enableSocialSync'), {
+				await axios.put(generateUrl('apps/contacts_appleab/api/v1/social/config/user/enableSocialSync'), {
 					allow: setting,
 				})
 				showSuccess(t('contacts', 'Setting saved'))
