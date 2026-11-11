@@ -32,3 +32,4 @@ composer.phar
 
 /playwright-report
 /test-results
+.claude/*.local.json
